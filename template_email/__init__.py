@@ -56,9 +56,9 @@ class TemplateEmail(EmailMultiAlternatives):
         context_body = dict(context, _body=True)
         context_html = dict(context, _bodyhtml=True)
 
-        subject = tpl.render(Context(context_subject)).strip()
-        body = tpl.render(Context(context_body)).strip()
-        html = tpl.render(Context(context_html)).strip()
+        subject = tpl.render(context_subject).strip()
+        body = tpl.render(context_body).strip()
+        html = tpl.render(context_html).strip()
 
         if subject != '':
             self.subject = subject
